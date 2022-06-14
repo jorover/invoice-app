@@ -17,7 +17,6 @@
 import InvoiceForm from '../components/InvoiceForm.vue'
 import InvoiceList from '../components/InvoiceList.vue'
 import { store } from '../components/store'
-import data from '/public/data.json'
 
 
 
@@ -29,7 +28,7 @@ props:{
   data(){
     return{
       invoices: [],
-      url: data ,
+      url: '/data.json',
       localData: JSON.parse(localStorage.getItem('All Items')),
       store
     }
