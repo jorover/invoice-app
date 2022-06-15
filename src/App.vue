@@ -121,9 +121,9 @@ body{
 
 .scrollContainer{
   overflow-y:scroll;
-  /*height:90vh;*/
-  height: calc(100vh - 15vh);
   padding:20px;
+  position:relative;
+  height:90vh;
 }
 
 .formContent{
@@ -213,14 +213,18 @@ h5{
   width:100%;
   height: 10vh;
   position: relative;
-  margin-top:20px;
+  background: rgb(20, 22, 37);
+}
+
+.light .btnGroupContainer{
+  background:#fff;
 }
 
 .btnGroup{
   display:flex;
   justify-content: space-between;
   align-items: flex-end;
-  min-height:inherit;
+  height:inherit;
 }
 
 .innerSideBtnGroup{
@@ -698,7 +702,7 @@ h5{
 
   .formContainer {
     left: 0%;
-    top: 90px;
+    top: 87px;
   }
 
   .itemOverlay{
@@ -710,10 +714,14 @@ h5{
     width:70%;
     left:15%;
   }
-  
-  .scrollContainer{
-    height: calc(100vh - 27vh);
+
+  .btnGroupContainer{
+    bottom: 90px;
   }
+  
+  /*.scrollContainer{
+    height: calc(100vh - 27vh);
+  }*/
 }
 
 
@@ -742,11 +750,6 @@ h5{
   }
 }
 
-@media (max-height: 720px) and (max-width: 550px){
-  .scrollContainer{
-    height: 73vh;
-  }
-}
 
 
 @media(max-width: 680px){
@@ -765,11 +768,6 @@ h5{
 
 }
 
-@media (max-height: 600px){
-  .scrollContainer{
-    height: 85vh;
-  }
-}
 
 @media (max-width: 600px){
    .createForm .formContainer{

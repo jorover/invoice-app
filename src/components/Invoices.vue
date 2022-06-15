@@ -63,7 +63,6 @@ export default {
                 }
             })
         }
-
         
     },
 
@@ -76,10 +75,16 @@ export default {
         window.addEventListener('resize', ()=> {
             if(window.innerWidth <= 768){
                 this.invoice = false;
-            } else{
+            } else {
                 this.invoice = true;
             }
         })
+
+         if(window.innerWidth <= 768){
+                this.invoice = false;
+            } else {
+                this.invoice = true;
+        }
     },
 
     updated(){
