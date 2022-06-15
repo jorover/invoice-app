@@ -312,6 +312,10 @@ h5{
   transition: 0.4s;
 }
 
+.createForm .itemDisplayContainer{
+  display:none;
+}
+
 .global .itemDisplayContainer{
   opacity:0.7;
 }
@@ -702,7 +706,7 @@ h5{
 
   .formContainer {
     left: 0%;
-    top: 87px;
+    top: 85px;
   }
 
   .itemOverlay{
@@ -716,7 +720,7 @@ h5{
   }
 
   .btnGroupContainer{
-    bottom: 87px;
+    bottom: 83.5px;
   }
   
   /*.scrollContainer{
