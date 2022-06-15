@@ -210,10 +210,11 @@ h5{
 }
 
 .btnGroupContainer{
-  width:100%;
+  width:inherit;
   height: 10vh;
-  position: relative;
+  position: fixed;
   background: rgb(20, 22, 37);
+  border:1px solid red;
 }
 
 .light .btnGroupContainer{
@@ -716,7 +717,7 @@ h5{
   }
 
   .btnGroupContainer{
-    bottom: 87px;
+    bottom: 0px;
   }
   
   /*.scrollContainer{
