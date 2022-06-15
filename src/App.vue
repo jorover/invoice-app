@@ -211,10 +211,10 @@ h5{
 
 .btnGroupContainer{
   width:inherit;
+  overflow:hidden;
   height: 10vh;
   position: fixed;
   background: rgb(20, 22, 37);
-  border:1px solid red;
 }
 
 .light .btnGroupContainer{
