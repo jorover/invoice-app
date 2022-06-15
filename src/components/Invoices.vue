@@ -8,7 +8,7 @@
           <li class="status"> {{ invoice.status }}</li>
       </router-link>
 
-       <router-link :to="{ name: 'EachInvoice', params:{ id:invoice.id } }" v-for= "invoice in invoices[0]" :key="invoice.id" class="innerEachInvoice" @click="eachInvoice(invoice.id)">
+    <router-link :to="{ name: 'EachInvoice', params:{ id:invoice.id } }" v-for= "invoice in invoices[0]" :key="invoice.id" class="innerEachInvoice" @click="eachInvoice(invoice.id)">
             <article>
                 <p>#<a> {{ invoice.id }}</a></p>
                 <p> Due {{ store.paymentDue(invoice.paymentDue)  }} </p>
@@ -67,13 +67,6 @@ export default {
 
     created(){
         store.paymentDue();
-         window.addEventListener('resize', () => {
-            if(window.innerWidth === 768){
-                this.statusCheck();
-            } else if(window.innerWidth <= 769){
-                location.reload();
-            }
-        })
     },
 
     mounted(){
