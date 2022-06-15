@@ -120,7 +120,7 @@ body{
 }
 
 .scrollContainer{
-  overflow-y:scroll;
+  overflow:scroll;
   padding:20px;
   position:relative;
   height:90vh;
