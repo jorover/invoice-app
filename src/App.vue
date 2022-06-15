@@ -312,10 +312,6 @@ h5{
   transition: 0.4s;
 }
 
-.createForm .itemDisplayContainer{
-  display:none;
-}
-
 .global .itemDisplayContainer{
   opacity:0.7;
 }
@@ -818,6 +814,10 @@ h5{
     'itemName itemName itemName itemName'
     'itemQty itemPrice itemPrice itemTotal';
   }
+
+  .createForm .itemDisplayContainer{
+  display:none;
+}
 }
 
 @media (max-width: 380px){
