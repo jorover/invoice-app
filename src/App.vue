@@ -720,7 +720,7 @@ h5{
   }
 
   .btnGroupContainer{
-    bottom: 83.5px;
+    bottom: 87px;
   }
   
   /*.scrollContainer{
