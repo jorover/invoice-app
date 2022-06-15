@@ -457,7 +457,6 @@ h5{
 
 .innerEachInvoice{
     height: fit-content;
-    display:none;
 }
   
 .innerEachInvoice article{
@@ -719,13 +718,13 @@ h5{
 
 
 @media (max-width: 768px){
-    .eachInvoice{
+    /*.eachInvoice{
       display:none;
     }
 
     .innerEachInvoice{
       display:flex;
-    }
+    }*/
 
     .createForm .formContainer{
       width:70%;
