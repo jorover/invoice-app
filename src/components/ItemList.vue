@@ -22,7 +22,7 @@
                 <input v-model="item.itemQty" id="itemQuantity" ref="itemQuantity">
                 <input v-model="item.itemPrice" id="itemPrice" ref="itemPrice">
                 <form class="itemFormTotal">
-                    <input v-model="item.itemTotal" id="itemTotal" ref="itemTotal">
+                    <input id="itemTotal" ref="itemTotal">
                     <img :src="deleteIcon" alt="delete-icon" @click="removeItem(item)">
                 </form>
             </form>
@@ -55,7 +55,6 @@ export default {
             itemName: '',
             itemQty: '',
             itemPrice: '',
-            itemTotal: '',
             newItems: this.item,
             showItem: false,
             changeError: this.itemError,
@@ -69,13 +68,10 @@ export default {
                 itemName: this.itemName,
                 itemQty: this.itemQty,
                 itemPrice: this.itemPrice,
-                itemTotal: this.itemTotal,
             }
         this.showItem = true;
         this.newItems.push(eachItem)
         document.querySelector('.errorContent').style.display = 'none';
-        console.log(this.newItems)
-
         },
 
         removeItem(item){
@@ -83,7 +79,6 @@ export default {
             if(this.newItems.length < 1){
                 this.showItem = false;
             }
-        console.log(this.newItems)
     }
     }, 
 

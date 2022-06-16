@@ -49,6 +49,7 @@ export const store = reactive({
             const allQty = itemQty;
             const allPrices = itemPrice;
             const allTotal = itemTotal;
+            console.log(allQty)
             
             for (let index = 0; index < allQty.length; index++) {
                 const elementQty = allQty[index];
@@ -63,6 +64,8 @@ export const store = reactive({
                         let newTotal = parseFloat(elementQty.value) * parseFloat(elementPrice.value);
                         elementTotal.value = newTotal;
                     }
+
+                    console.log('pink')
                 })
     
                 elementPrice.addEventListener('keyup', ()=> {

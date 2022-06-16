@@ -193,7 +193,6 @@ export default {
         addItem(){
            const newItems = {
                name: '',
-               total: '',
                quantity: '',
                price: ''
            }
@@ -210,13 +209,6 @@ export default {
 
     created(){
         this.getEachInvoice();
-    },
-
-    mounted(){
-        const itemQty = this.$refs.itemQuantity
-        const itemPrice =  this.$refs.itemPrice
-        const itemTotal = this.$refs.itemTotal
-        store.calculateTotal(itemQty, itemPrice, itemTotal)
     }
 
 }

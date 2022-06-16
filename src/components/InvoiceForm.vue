@@ -182,7 +182,7 @@ export default {
 
             if(event.target.innerText === 'Save & Send') {
                 this.checkPaymentStatus(formDetails.createdAt, formDetails.paymentDue, formDetails.paymentTerms, formDetails);
-                this.createInnerForm(checkName, checkQuantity, checkPrice, checkTotal);
+                this.createInnerForm(checkName, checkQuantity, checkPrice, checkTotal, formDetails);
                 this.saveSend(formDetails);
             }
 
@@ -213,7 +213,7 @@ export default {
             location.reload();
         },
 
-        createInnerForm(name, quantity, price,total){
+        createInnerForm(name, quantity, price,total, itemTotal){
             const checkName = name;
             const checkQuantity = quantity;
             const checkPrice = price;
@@ -232,11 +232,11 @@ export default {
             }
             
             this.innerItems = formArry;
-            this.innerItems.map(item => item.price).forEach(item => {
+            this.innerItems.map(item => item.total).forEach(item => {
                 totalArry.push(parseFloat(item))
             })
             localStorage.setItem('Items', JSON.stringify(this.innerItems))
-            this.checkTotalValue(this.itemTotal, totalArry);
+            this.checkTotalValue(itemTotal, totalArry);
         },
 
         checkPaymentStatus(createdDate, paymentDate, paymentTerms, formDetails, checkEve){ 
@@ -279,11 +279,15 @@ export default {
         checkTotalValue(item, totalArry) {
             if(totalArry.length < 1){
                 this.itemTotal = 0
-            } else if(totalArry.length >=1) {
-                item = totalArry.reduce((totalVal, val) => totalVal + val)
             }
-
-            this.itemTotal = item;
+            
+            if(totalArry.length >=1) {
+                if(item === undefined){
+                    this.itemTotal = totalArry.reduce((totalVal, val) => totalVal + val)
+                } else {
+                    item.total = totalArry.reduce((totalVal, val) => totalVal + val)
+                }
+            }
         },
 
         changeToDate(){
@@ -400,9 +404,9 @@ export default {
 
              }
             
-             this.checkPaymentStatus(newInputDate, newPaymentDue, newPaymentTerms, formDetails);
-             this.saveEditedForm(allInvoices, formDetails);
-              this.route = '/'
+            this.checkPaymentStatus(newInputDate, newPaymentDue, newPaymentTerms, formDetails);
+            this.saveEditedForm(allInvoices, formDetails);
+            this.route = '/'
         },
 
         saveEditedForm(allInvoices, formDetails){

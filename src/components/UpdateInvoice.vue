@@ -184,11 +184,13 @@ export default {
 
     mounted(){
         this.retrieveInvoice();
+        store.formCheck = true
     },
 
     updated(){
         this.status();
         store.formCheck = true
+     
     }
 }
 </script>
